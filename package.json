@@ -1,0 +1,19 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "description": "Making my site",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaristGormanly/nBlanchardlab4.git"
+  },
+  "author": "Nicholas Blanchard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaristGormanly/nBlanchardlab4/issues"
+  },
+  "homepage": "https://github.com/MaristGormanly/nBlanchardlab4#readme"
+}
