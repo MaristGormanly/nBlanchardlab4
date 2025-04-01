@@ -23,7 +23,6 @@
         .row {
             display: flex;
             justify-content: center;
-            gap: 20px;
             width: 100%;
         }
 
@@ -33,9 +32,11 @@
             width: 100%;
         }
 
-        /* Row 2 - Middle section (Buttons) */
+        /* Row 2 - Middle section (Buttons stacked) */
         .text {
-            justify-content: center; /* Align buttons in the center */
+            display: flex;
+            flex-direction: column; /* Stack the buttons vertically */
+            align-items: center; /* Center them horizontally */
             gap: 20px;
         }
 
@@ -88,7 +89,7 @@
             <img src="tuahmeet.png" alt="Bandell Screen">
         </div>
 
-        <!-- Row 2 - Middle Section (Login, Signup, Sample) -->
+        <!-- Row 2 - Middle Section (Login, Signup, Sample stacked) -->
         <div class="row text">
             <a href="signup.html">
                 <img src="signup.png" alt="Signup Button">
