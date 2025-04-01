@@ -5,17 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandell</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;    /* Center items horizontally */
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .row img {
+            max-width: 100%; /* Prevents huge images */
+            height: auto;
+        }
+
+        /* Middle section (buttons) styling */
+        .text {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text a {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        /* Feed section styling */
+        .feed {
+            width: 100%;
+            max-width: 600px;
+            height: 966px; /* Fixed height */
+            overflow-y: auto; /* Enables scrolling */
+            background: #42D01C;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feed h3 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .feed p {
+            background: #FF13F0;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Left Section - Image -->
-        <img src="tuahmeet.png" alt="Bandell Screen">
+        <!-- Row 1 - Image Section -->
+        <div class="row">
+            <img src="tuahmeet.png" alt="Bandell Screen">
+        </div>
 
-        <!-- Middle Section - Text & Buttons -->
-        <div class="text">
-            <img src="header1.png" alt="Header">
-            <br>
+        <!-- Row 2 - Buttons Section (Login, Signup, Sample) -->
+        <div class="row text">
             <a href="signup.html">
                 <img src="signup.png" alt="Signup Button">
             </a>
@@ -23,14 +88,16 @@
                 <img src="login.png" alt="Login Button">
             </a>
             <a href="samplepage.html">
-                <img src="Your paragraph text (1).png" alt="mover Button">
+                <img src="Your paragraph text (1).png" alt="Mover Button">
             </a>
         </div>
 
-        <!-- Right Section - Feed -->
-        <div id="feed" class="feed">
-            <h3>Feed</h3>
-            <!-- The feed will be dynamically rendered here by JavaScript -->
+        <!-- Row 3 - Feed Section -->
+        <div class="row">
+            <div id="feed" class="feed">
+                <h3>Feed</h3>
+                <!-- The feed will be dynamically rendered here by JavaScript -->
+            </div>
         </div>
     </div>
 
