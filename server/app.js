@@ -1,22 +1,15 @@
 const express = require('express');
-const path = require('path');
-
-const app = express();
-const PORT = 1337;
-
-// Serve static files from the 'public' folder
-app.use('/public', express.static(path.join(__dirname, 'public')));
-
-// Serve index.html at the root
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// Serve page1.html at '/page1'
-app.get('/page1', (req, res) => {
-    res.sendFile(path.join(__dirname, 'page1.html'));
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}/`);
-});
+ const path = require('path');
+ 
+ const app = express();
+ const PORT = 1337;
+ 
+ app.use(express.static(__dirname)); 
+ 
+ app.get('/page1', (req, res) => {
+     res.sendFile(path.join(__dirname, 'page1.html'));
+ });
+ 
+ app.listen(PORT, () => {
+     console.log(`Server running at http://localhost:${PORT}/`);
+ });
