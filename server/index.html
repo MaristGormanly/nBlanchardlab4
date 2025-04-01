@@ -16,17 +16,24 @@
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-            gap:40px;
+            gap: 40px;
             padding: 40px;
         }
 
         .container img {
-            max-width: 3000px;
+            max-width: 100%; /* Prevents huge images */
             height: auto;
         }
 
         .text {
-            max-width: 5000px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Adds space between the buttons */
+        .text a {
+            display: inline-block;
+            margin: 10px;
         }
 
         .feed {
@@ -60,48 +67,19 @@
 
         <!-- Middle Section - Text & Buttons -->
         <div class="text">
-            <p> </p>
-            <img src="header1.png" alt="header">
-            <p> </p>
-            <p> </p>
-            <p> </p>
+            <img src="header1.png" alt="Header">
+            <br>
             <a href="signup.html">
-    <img src="signup.png" alt="Signup Button">
-</a>
-<a href="login.html">
-    <img src="login.png" alt="Login Button">
-</a>
-
-            <p> </p>
-            
-            <p> </p>
-            
-           
+                <img src="signup.png" alt="Signup Button">
+            </a>
+            <a href="login.html">
+                <img src="login.png" alt="Login Button">
+            </a>
         </div>
 
         <!-- Right Section - Feed -->
         <div class="feed">
             <h3>Feed</h3>
-            <p>🎸 Band A just released a new song!</p>
-            <p>🔥 Band B is playing live this Friday!</p>
-            <p>🎶 Band C is looking for a new drummer!</p>
-            <p>📣 Music fest lineup announced!</p>
-            <p>🎤 Band D's new album is out now!</p>
-            <p>📀 Vinyl reissue of classic album available!</p>
-            <p>🎧 Discover new indie bands here.</p>
-            <p>🎼 Band E is hosting an open jam session!</p>
-            <p>🚀 Band F signed a record deal!</p>
-            <p>🎹 Producer G shares new mixing tips.</p>
-            <p>🎸 Band A just released a new song!</p>
-            <p>🔥 Band B is playing live this Friday!</p>
-            <p>🎶 Band C is looking for a new drummer!</p>
-            <p>📣 Music fest lineup announced!</p>
-            <p>🎤 Band D's new album is out now!</p>
-            <p>📀 Vinyl reissue of classic album available!</p>
-            <p>🎧 Discover new indie bands here.</p>
-            <p>🎼 Band E is hosting an open jam session!</p>
-            <p>🚀 Band F signed a record deal!</p>
-            <p>🎹 Producer G shares new mixing tips.</p>
             <p>🎸 Band A just released a new song!</p>
             <p>🔥 Band B is playing live this Friday!</p>
             <p>🎶 Band C is looking for a new drummer!</p>
