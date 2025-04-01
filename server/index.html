@@ -14,46 +14,43 @@
 
         .container {
             display: flex;
-            flex-direction: column; /* Stack rows vertically */
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
+            justify-content: space-between; /* Position elements side by side */
+            align-items: flex-start; /* Align elements to the top */
+            gap: 40px;
+            padding: 40px;
         }
 
-        .row {
+        /* Left Section - Image (tuahmeet.png) */
+        .left {
+            flex: 1; /* Takes up 1 part of the space */
             display: flex;
-            justify-content: center;
-            width: 90%;
+            justify-content: flex-start;
         }
 
-        /* Row 1 - Left section (tuahmeet.png) */
-        .row.image {
-            justify-content: flex-start; /* Align image to the left */
-            width: 90%;
-        }
-
-        /* Row 2 - Middle section (Buttons stacked) */
-        .text {
+        /* Middle Section - Text & Buttons stacked */
+        .middle {
+            flex: 1; /* Takes up 1 part of the space */
             display: flex;
             flex-direction: column; /* Stack the buttons vertically */
-            align-items: center; /* Center them horizontally */
+            align-items: center;
             gap: 20px;
         }
 
-        .text a {
+        .middle a {
             display: inline-block;
             margin: 10px;
         }
 
-        /* Row 3 - Right section (Feed) */
-        .row.feed {
-            justify-content: flex-end; /* Align feed to the right */
-            width: 900%;
+        /* Right Section - Feed */
+        .right {
+            flex: 1; /* Takes up 1 part of the space */
+            display: flex;
+            justify-content: flex-end; /* Align the feed to the right */
         }
 
         /* Feed section */
         .feed {
-            width: 400px;
+            width: 600px;
             height: 966px; /* Fixed height */
             overflow-y: auto; /* Enables scrolling */
             background: #42D01C;
@@ -75,7 +72,7 @@
         }
 
         /* Image styling */
-        .row img {
+        .container img {
             max-width: 100%;
             height: auto;
         }
@@ -84,13 +81,13 @@
 <body>
 
     <div class="container">
-        <!-- Row 1 - Left Section (Image) -->
-        <div class="row image">
+        <!-- Left Section - Image (tuahmeet.png) -->
+        <div class="left">
             <img src="tuahmeet.png" alt="Bandell Screen">
         </div>
 
-        <!-- Row 2 - Middle Section (Login, Signup, Sample stacked) -->
-        <div class="row text">
+        <!-- Middle Section - Text & Buttons stacked -->
+        <div class="middle">
             <a href="signup.html">
                 <img src="signup.png" alt="Signup Button">
             </a>
@@ -102,8 +99,8 @@
             </a>
         </div>
 
-        <!-- Row 3 - Right Section (Feed) -->
-        <div class="row feed">
+        <!-- Right Section - Feed -->
+        <div class="right">
             <div id="feed" class="feed">
                 <h3>Feed</h3>
                 <!-- The feed will be dynamically rendered here by JavaScript -->
