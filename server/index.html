@@ -1,14 +1,36 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <img src="/tuahmeet.png" alt="Tuah Meet Image">
-    <title>Hello Island Fan.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Text</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center; /* Aligns items vertically */
+            gap: 20px; /* Adds spacing between image and text */
+        }
+
+        .container img {
+            max-width: 200px; /* Adjust image size */
+            height: auto;
+        }
+
+        .text {
+            max-width: 500px; /* Prevents text from stretching too wide */
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <img src="/tuahmeet.png" alt="Tuah Meet Image">
-    <p>Hello Island Fan.</p>
-    <h1>Island Facts:</h1>
-    <a href="/page1">Go to Page 1</a>
+
+    <div class="container">
+        <img src="your-image.jpg" alt="Description of image">
+        <div class="text">
+            <h2>Your Heading</h2>
+            <p>Your descriptive text goes here. This text will be aligned to the right of the image.</p>
+        </div>
+    </div>
+
 </body>
 </html>
+
