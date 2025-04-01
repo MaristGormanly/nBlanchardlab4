@@ -6,6 +6,8 @@ const express = require('express');
  
  app.use(express.static(__dirname)); 
  app.use('/public', express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 
  app.get('/page1', (req, res) => {
      res.sendFile(path.join(__dirname, 'page1.html'));
