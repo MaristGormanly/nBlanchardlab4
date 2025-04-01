@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandell</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,30 +14,29 @@
 
         .container {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center;    /* Center items horizontally */
+            flex-direction: column; /* Stack rows vertically */
+            align-items: center;
             gap: 40px;
             padding: 40px;
         }
 
         .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
         }
 
-        .row img {
-            max-width: 100%; /* Prevents huge images */
-            height: auto;
+        /* Row 1 - Left section (tuahmeet.png) */
+        .row.image {
+            justify-content: flex-start; /* Align image to the left */
+            width: 100%;
         }
 
-        /* Middle section (buttons) styling */
+        /* Row 2 - Middle section (Buttons) */
         .text {
-            display: flex;
+            justify-content: center; /* Align buttons in the center */
             gap: 20px;
-            justify-content: center;
-            align-items: center;
         }
 
         .text a {
@@ -46,10 +44,15 @@
             margin: 10px;
         }
 
-        /* Feed section styling */
-        .feed {
+        /* Row 3 - Right section (Feed) */
+        .row.feed {
+            justify-content: flex-end; /* Align feed to the right */
             width: 100%;
-            max-width: 600px;
+        }
+
+        /* Feed section */
+        .feed {
+            width: 600px;
             height: 966px; /* Fixed height */
             overflow-y: auto; /* Enables scrolling */
             background: #42D01C;
@@ -69,17 +72,23 @@
             margin: 5px 0;
             border-radius: 5px;
         }
+
+        /* Image styling */
+        .row img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Row 1 - Image Section -->
-        <div class="row">
+        <!-- Row 1 - Left Section (Image) -->
+        <div class="row image">
             <img src="tuahmeet.png" alt="Bandell Screen">
         </div>
 
-        <!-- Row 2 - Buttons Section (Login, Signup, Sample) -->
+        <!-- Row 2 - Middle Section (Login, Signup, Sample) -->
         <div class="row text">
             <a href="signup.html">
                 <img src="signup.png" alt="Signup Button">
@@ -92,8 +101,8 @@
             </a>
         </div>
 
-        <!-- Row 3 - Feed Section -->
-        <div class="row">
+        <!-- Row 3 - Right Section (Feed) -->
+        <div class="row feed">
             <div id="feed" class="feed">
                 <h3>Feed</h3>
                 <!-- The feed will be dynamically rendered here by JavaScript -->
