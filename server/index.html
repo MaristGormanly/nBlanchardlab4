@@ -71,6 +71,13 @@
             border-radius: 5px;
         }
 
+        /* Time spent section */
+        #time-spent {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+
         /* Image styling */
         .container img {
             max-width: 100%;
@@ -108,7 +115,30 @@
         </div>
     </div>
 
+    <!-- Time spent on page -->
+    <div id="time-spent">
+        You've been on this page for: <span id="time-display">0s</span>
+    </div>
+
     <!-- Link to the feed.js script -->
     <script src="feed.js"></script>
+
+    <!-- Add this JavaScript for time tracking -->
+    <script>
+        // Track the start time when the page loads
+        const startTime = Date.now();
+
+        // Function to update the time spent on the page
+        function updateTimeSpent() {
+            const currentTime = Date.now();
+            const timeSpentInSeconds = Math.floor((currentTime - startTime) / 1000); // Convert to seconds
+
+            // Update the time display on the page
+            document.getElementById('time-display').textContent = `${timeSpentInSeconds}s`;
+        }
+
+        // Update the time spent every second
+        setInterval(updateTimeSpent, 1000); // Update every second
+    </script>
 </body>
 </html>
