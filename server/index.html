@@ -89,17 +89,14 @@
 <body>
 
     <div class="container">
-        <!-- Left Section - Image (tuahmeet.png) -->
         <div class="left">
             <img src="tuahmeet.png" alt="Bandell Screen">
             
-            <!-- Time spent section below the image -->
             <div id="time-spent">
                 You've been on this page for: <span id="time-display">0s</span>
             </div>
         </div>
 
-        <!-- Middle Section - Text & Buttons stacked -->
         <div class="middle">
             <a href="signup.html">
                 <img src="signup.png" alt="Signup Button">
@@ -112,34 +109,26 @@
             </a>
         </div>
 
-        <!-- Right Section - Feed -->
         <div class="right">
             <div id="feed" class="feed">
                 <h3>Feed</h3>
-                <!-- The feed will be dynamically rendered here by JavaScript -->
             </div>
         </div>
     </div>
 
-    <!-- Link to the feed.js script -->
     <script src="feed.js"></script>
 
-    <!-- Add this JavaScript for time tracking -->
     <script>
-        // Track the start time when the page loads
         const startTime = Date.now();
 
-        // Function to update the time spent on the page
+        // time on page
         function updateTimeSpent() {
             const currentTime = Date.now();
-            const timeSpentInSeconds = Math.floor((currentTime - startTime) / 1000); // Convert to seconds
-
-            // Update the time display on the page
+            const timeSpentInSeconds = Math.floor((currentTime - startTime) / 1000); 
             document.getElementById('time-display').textContent = `${timeSpentInSeconds}s`;
         }
 
-        // Update the time spent every second
-        setInterval(updateTimeSpent, 1000); // Update every second
+        setInterval(updateTimeSpent, 1000); 
     </script>
 </body>
 </html>
