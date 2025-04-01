@@ -11,17 +11,15 @@ const posts = [
     { title: "🎹 Producer G shares new mixing tips.", body: "Learn from the best!", url: "sampleimg.jpeg" }
 ];
 
-// Function to render the posts
+// posts
 function renderFeed(posts) {
-    const feedContainer = document.getElementById('feed');  // Get the feed container element
-
-    // Clear any previous content in the feed
+    const feedContainer = document.getElementById('feed');
     feedContainer.innerHTML = '';
 
-    // Loop through each post and create HTML elements
+    // Loop through post/s
     posts.forEach(post => {
         const postDiv = document.createElement('div');
-        postDiv.classList.add('post');  // Add a class for styling
+        postDiv.classList.add('post');  // styling
 
         const title = document.createElement('h3');
         title.textContent = post.title;
@@ -41,7 +39,7 @@ function renderFeed(posts) {
     });
 }
 
-// Call the function to render the feed when the page loads
+// Call function to read posts
 document.addEventListener('DOMContentLoaded', function() {
     renderFeed(posts);
 });
