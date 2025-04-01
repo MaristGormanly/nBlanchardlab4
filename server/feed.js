@@ -1,14 +1,14 @@
 const posts = [
-    { title: "🎸 Band A just released a new song!", body: "Check it out now!", url: "sampleimg.jpeg" },
-    { title: "🔥 Band B is playing live this Friday!", body: "Don't miss the show!", url: "sampleimg.jpeg" },
-    { title: "🎶 Band C is looking for a new drummer!", body: "If you're interested, contact us!", url: "sampleimg.jpeg" },
-    { title: "📣 Music fest lineup announced!", body: "Big names on the list!", url: "sampleimg.jpeg" },
-    { title: "🎤 Band D's new album is out now!", body: "Stream it everywhere!", url: "sampleimg.jpeg" },
-    { title: "📀 Vinyl reissue of classic album available!", body: "Get it before it's gone!", url: "sampleimg.jpeg" },
-    { title: "🎧 Discover new indie bands here.", body: "Explore fresh sounds!", url: "sampleimg.jpeg" },
-    { title: "🎼 Band E is hosting an open jam session!", body: "Join us for a fun session!", url: "sampleimg.jpeg" },
-    { title: "🚀 Band F signed a record deal!", body: "Big news in the industry!", url: "sampleimg.jpeg" },
-    { title: "🎹 Producer G shares new mixing tips.", body: "Learn from the best!", url: "sampleimg.jpeg" }
+    { title: "New song!", body: "Check it out now!", url: "sampleimg.jpeg" },
+    { title: "Live this Friday!", body: "Don't miss the show!", url: "sampleimg.jpeg" },
+    { title: "A new drummer!", body: "If you're interested, contact us!", url: "sampleimg.jpeg" },
+    { title: "Music festival lineup announced!", body: "Big names on the list!", url: "sampleimg.jpeg" },
+    { title: "Album is out now!", body: "Stream it everywhere!", url: "sampleimg.jpeg" },
+    { title: "Album available!", body: "Get it before it's gone!", url: "sampleimg.jpeg" },
+    { title: "New indie band here.", body: "Explore fresh sounds!", url: "sampleimg.jpeg" },
+    { title: "Hiring session!", body: "Join us for a fun session!", url: "sampleimg.jpeg" },
+    { title: "Signed a record deal!", body: "Big news in the industry!", url: "sampleimg.jpeg" },
+    { title: "New mixing!", body: "Learn from the best!", url: "sampleimg.jpeg" }
 ];
 
 // posts
