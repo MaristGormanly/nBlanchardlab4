@@ -24,7 +24,8 @@
         .left {
             flex: 1; /* Takes up 1 part of the space */
             display: flex;
-            justify-content: flex-start;
+            flex-direction: column; /* Stack image and time below */
+            align-items: center; /* Center align content */
         }
 
         /* Middle Section - Text & Buttons stacked */
@@ -91,6 +92,11 @@
         <!-- Left Section - Image (tuahmeet.png) -->
         <div class="left">
             <img src="tuahmeet.png" alt="Bandell Screen">
+            
+            <!-- Time spent section below the image -->
+            <div id="time-spent">
+                You've been on this page for: <span id="time-display">0s</span>
+            </div>
         </div>
 
         <!-- Middle Section - Text & Buttons stacked -->
@@ -113,11 +119,6 @@
                 <!-- The feed will be dynamically rendered here by JavaScript -->
             </div>
         </div>
-    </div>
-
-    <!-- Time spent on page -->
-    <div id="time-spent">
-        You've been on this page for: <span id="time-display">0s</span>
     </div>
 
     <!-- Link to the feed.js script -->
