@@ -4,60 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandell</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #FFFFFF;
-        }
-        
-        .container {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 40px;
-        }
-
-        .container img {
-            max-width: 100%; /* Prevents huge images */
-            height: auto;
-        }
-
-        .text {
-            max-width: 600px;
-            text-align: center;
-        }
-
-        /* Adds space between the buttons */
-        .text a {
-            display: inline-block;
-            margin: 10px;
-        }
-
-        .feed {
-            width: 600px;
-            height: 966px; /* Set a fixed height */
-            overflow-y: auto; /* Enables scrolling */
-            background: #42D01C;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .feed h3 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .feed p {
-            background: #FF13F0;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -81,21 +28,13 @@
         </div>
 
         <!-- Right Section - Feed -->
-        <div class="feed">
+        <div id="feed" class="feed">
             <h3>Feed</h3>
-            <p>🎸 Band A just released a new song!</p>
-            <p>🔥 Band B is playing live this Friday!</p>
-            <p>🎶 Band C is looking for a new drummer!</p>
-            <p>📣 Music fest lineup announced!</p>
-            <p>🎤 Band D's new album is out now!</p>
-            <p>📀 Vinyl reissue of classic album available!</p>
-            <p>🎧 Discover new indie bands here.</p>
-            <p>🎼 Band E is hosting an open jam session!</p>
-            <p>🚀 Band F signed a record deal!</p>
-            <p>🎹 Producer G shares new mixing tips.</p>
+            <!-- The feed will be dynamically rendered here by JavaScript -->
         </div>
     </div>
 
+    <!-- Link to the feed.js script -->
+    <script src="feed.js"></script>
 </body>
 </html>
-
