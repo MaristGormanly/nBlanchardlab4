@@ -22,5 +22,5 @@ app.listen(PORT, () => {
 });
 
 // Include the userRoutes module
-let userRoutes = require('./route/userRoute');
+let userRoute = require('./route/userRoute');
 app.use('/api/user', userRoute);
