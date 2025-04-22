@@ -20,3 +20,6 @@ app.get('/login', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
+
+// Include the userRoutes module
+let userRoutes = require('./route/userRoutes');
