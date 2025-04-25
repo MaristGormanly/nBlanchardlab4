@@ -1,4 +1,4 @@
-var user = require('../models/user')
+var user = require('../model/user')
 
 var users = [];
 
