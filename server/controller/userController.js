@@ -1,58 +1,170 @@
-var user = require('../model/user')
+let users = [];
+let nextId = 1;
 
-var users = [];
+/**
+ * Get all users
+ */
+const getAllUsers = (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'Users retrieved successfully',
+    data: users
+  });
+};
 
-var user1 = user.createUser("Brian", "Gormanly", "brian.gormanly@marist.edu", "letmein");
-var user2 = user.createUser("Happy", "Gilmore", "happy.gilmore@gmail.com", "backnine");
-var user3 = user.createUser("Harry", "Truman", "htruman@wh.gov", "pres1");
-var user4 = user.createUser("George", "Washinton", "gw@wh.gov", "pres2");
-users.push(user1);
-users.push(user2);
-users.push(user3);
-users.push(user4);
+/**
+ * Get a user by ID
+ */
+const getUserById = (req, res) => {
+  const userId = parseInt(req.params.userId, 10);
+  if (isNaN(userId)) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'Invalid user ID'
+    });
+  }
+  const user = users.find(u => u.id === userId);
+  if (!user) {
+    return res.status(404).json({
+      status: 'error',
+      message: 'User not found'
+    });
+  }
+  res.status(200).json({
+    status: 'success',
+    message: 'User retrieved successfully',
+    data: user
+  });
+};
 
-exports.getUsers = function(req, res) {
-	res.setHeader('Content-Type', 'application/json');
-	res.send(users);
-}
+/**
+ * Create a new user
+ */
+const createUser = (req, res) => {
+  const { firstName, lastName, password } = req.body;
+  if (!firstName || !lastName || !password) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'Missing required fields: firstName, lastName, password'
+    });
+  }
+  const newUser = {
+    id: nextId++,
+    firstName,
+    lastName,
+    password
+  };
+  users.push(newUser);
+  res.status(201).json({
+    status: 'success',
+    message: 'User created successfully',
+    data: newUser
+  });
+};
 
-exports.saveUser = function(req, res) {
-	let newUser = user.createUser(req.body.firstName, req.body.lastName, req.body.email, req.body.password);
-	users.push(newUser);
-	res.setHeader('Content-Type', 'application/json');
-	res.send(users);
-}
+/**
+ * Fully update a user by ID (PUT)
+ */
+const updateUser = (req, res) => {
+  const userId = parseInt(req.params.userId, 10);
+  if (isNaN(userId)) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'Invalid user ID'
+    });
+  }
+  const user = users.find(u => u.id === userId);
+  if (!user) {
+    return res.status(404).json({
+      status: 'error',
+      message: 'User not found'
+    });
+  }
+  const { firstName, lastName, password } = req.body;
+  if (!firstName || !lastName || !password) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'Missing fields for full update: firstName, lastName, password are required'
+    });
+  }
+  // Update all fields
+  user.firstName = firstName;
+  user.lastName = lastName;
+  user.password = password;
+  res.status(200).json({
+    status: 'success',
+    message: 'User updated successfully',
+    data: user
+  });
+};
 
-exports.getUser = function(req, res) {
-	res.setHeader('Content-Type', 'application/json');
-  res.send(users[req.params.userId]);
-}
+/**
+ * Partially update a user by ID (PATCH)
+ */
+const partialUpdateUser = (req, res) => {
+  const userId = parseInt(req.params.userId, 10);
+  if (isNaN(userId)) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'Invalid user ID'
+    });
+  }
+  const user = users.find(u => u.id === userId);
+  if (!user) {
+    return res.status(404).json({
+      status: 'error',
+      message: 'User not found'
+    });
+  }
+  const { firstName, lastName, password } = req.body;
+  if (!firstName && !lastName && !password) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'At least one field (firstName, lastName, or password) must be provided for update'
+    });
+  }
+  // Update only provided fields
+  if (firstName) user.firstName = firstName;
+  if (lastName)  user.lastName = lastName;
+  if (password)  user.password = password;
+  res.status(200).json({
+    status: 'success',
+    message: 'User updated successfully',
+    data: user
+  });
+};
 
-exports.deleteUser = function(req, res) {
-	users.splice(req.params.userId, 1);
-	res.setHeader('Content-Type', 'application/json');
-	res.send(users);
-}
+/**
+ * Delete a user by ID
+ */
+const deleteUser = (req, res) => {
+  const userId = parseInt(req.params.userId, 10);
+  if (isNaN(userId)) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'Invalid user ID'
+    });
+  }
+  const userIndex = users.findIndex(u => u.id === userId);
+  if (userIndex === -1) {
+    return res.status(404).json({
+      status: 'error',
+      message: 'User not found'
+    });
+  }
+  const deletedUser = users.splice(userIndex, 1)[0];
+  res.status(200).json({
+    status: 'success',
+    message: 'User deleted successfully',
+    data: deletedUser
+  });
+};
 
-exports.updateUser = function(req, res) {
-	// get the existing user from the array
-	var updatedUser = users[req.params.userId];
-
-	// check to see what has been passed and update the local copy
-	console.log(req.body.firstName);
-	if(req.body.firstName)
-
-		updatedUser.firstName = req.body.firstName;
-	if(req.body.lastName)
-		updatedUser.lastName = req.body.lastName;
-	if(req.body.email)
-		updatedUser.email = req.body.email;
-	if(req.body.password)
-		updatedUser.password = req.body.password;
-
-	// save the local copy of the user back into the array
-	users[req.params.userId] = updatedUser;
-
-	res.setHeader('Content-Type', 'application/json');
-	res.send(users[req.params.userId]);
-}
+module.exports = {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  partialUpdateUser,
+  deleteUser
+};
