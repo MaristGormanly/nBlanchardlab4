@@ -1,8 +1,9 @@
-// **Add this line:** import the controller/service**
-var userController = require('../service/userService');
+// server/service/userService.js
+
+const userController = require('../controller/userController');
 
 module.exports = {
-  getAllUsers,
-  saveUser,
-  getUser
+  getAllUsers: userController.getUsers,
+  saveUser:    userController.saveUser,
+  getUser:     userController.getUser
 };
