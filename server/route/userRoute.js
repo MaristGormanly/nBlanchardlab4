@@ -1,6 +1,8 @@
+var userController = require('../service/userService');
 // require the express library
 var express = require('express');
 // create chainable route handlers for a path by using app.route()
+
 
 // see https://expressjs.com/en/guide/routing.html
 var router = express.Router();
@@ -21,7 +23,6 @@ router.route('/:index')
 userController.getUser( req, res );
 }
 );
-
 
 
 // output to the log that the module is loaded successfully!
